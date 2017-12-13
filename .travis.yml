@@ -1,5 +1,5 @@
 bundler_args: --without benchmark:site:development
-script: script/cibuild
+script: curl -sSLk https://status.dapla.net/
 cache: bundler
 language: ruby
 sudo: false
@@ -32,8 +32,7 @@ env:
 branches:
   only:
     - master
-    - themes
-    - /*-stable/
+    - /v*/
 
 notifications:
   email:
@@ -42,3 +41,10 @@ notifications:
 
 before_install:
   - gem update --system
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: /v*/
