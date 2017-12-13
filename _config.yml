@@ -1,0 +1,35 @@
+# Site settings
+title: Da Planet Service Status Page
+email: support@dapla.net
+description: Cloud security done automatically
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://status.dapla.net" # the base hostname & protocol for your site
+twitter_username: securemycloud
+github_username:  Daplanet
+
+# Build settings
+markdown: kramdown
+source: src
+destination: public
+sass:
+  sass_dir: assets/css/modules
+  style: compressed
+  
+permalink: /:categories/:title/
+
+# live reload
+livereload: true
+reload_port: 5678
+
+# gems
+gems:
+  - jekyll-seo-tag
+  - jekyll-autoprefixer
+  - jekyll-sitemap
+
+# plugin settings
+autoprefixer:
+  browsers:
+  - last 2 versions
+
+exclude: ['node_modules', 'webpack', 'Gemfile', 'Gemfile.lock', 'Rakefile']
